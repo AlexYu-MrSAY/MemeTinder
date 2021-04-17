@@ -38,7 +38,7 @@ public class Main {
         }
     }
     public static void main(String[] args) throws SQLException {
-        DatabaseConfiguration databaseConfiguration = new JdbcDatabaseConfiguration("jdbc:sqlite:C:\\Users\\yugai\\OneDrive\\Документы\\MemeTinder.db:");
+        DatabaseConfiguration databaseConfiguration = new JdbcDatabaseConfiguration("jdbc:sqlite:C:\\Users\\yugai\\OneDrive\\Документы\\MemeTinder.db");
         Service<User, Integer> userService = new UserService(DaoManager.createDao(databaseConfiguration.source(), User.class));
         Service<Meme, Integer> memeService = new MemeService(DaoManager.createDao(databaseConfiguration.source(), Meme.class));
         Service<MemeReview, Integer> memeReviewService = new MemeReviewService(DaoManager.createDao(databaseConfiguration.source(), MemeReview.class));
