@@ -1,5 +1,6 @@
 package com.company.syugai.model;
 
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -16,7 +17,7 @@ public class MemeReview implements Model<Integer>{
     private Meme meme;
     @DatabaseField(columnName = "rating", canBeNull = false)
     private boolean rating;
-    @DatabaseField(columnName = "data", canBeNull = false)
+    @DatabaseField(columnName = "data", canBeNull = false, dataType = DataType.SERIALIZABLE)
     private LocalDate date;
 
 

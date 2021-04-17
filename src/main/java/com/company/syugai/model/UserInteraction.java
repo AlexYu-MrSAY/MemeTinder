@@ -1,5 +1,6 @@
 package com.company.syugai.model;
 
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -10,13 +11,13 @@ import java.util.Objects;
 public class UserInteraction implements Model<Integer>{
     @DatabaseField(id = true)
     private int id;
-    @DatabaseField(columnName = "source", canBeNull = false)
+    @DatabaseField(columnName = "source", canBeNull = false, foreign = true, foreignAutoRefresh = true)
     private User source;
-    @DatabaseField(columnName = "target", canBeNull = false)
+    @DatabaseField(columnName = "target", canBeNull = false, foreign = true, foreignAutoRefresh = true)
     private User target;
     @DatabaseField(columnName = "reaction", canBeNull = false)
     private boolean reaction;
-    @DatabaseField(columnName = "date", canBeNull = false)
+    @DatabaseField(columnName = "date", canBeNull = false, dataType = DataType.SERIALIZABLE)
     private LocalDate date;
 
     public UserInteraction() {

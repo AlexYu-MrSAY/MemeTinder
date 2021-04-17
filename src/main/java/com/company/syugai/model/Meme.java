@@ -1,5 +1,6 @@
 package com.company.syugai.model;
 
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -12,7 +13,7 @@ public class Meme implements Model<Integer>{
     private int id;
     @DatabaseField(columnName = "link", canBeNull = false)
     private String link;
-    @DatabaseField(columnName = "date", canBeNull = false)
+    @DatabaseField(columnName = "date", canBeNull = false, dataType = DataType.SERIALIZABLE)
     private LocalDate data;
 
     public Meme() {
